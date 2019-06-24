@@ -5,15 +5,13 @@ import cartopy.crs as ccrs
 
 cm.plotCartoMap(projection='northpole', terrain=True)
 
-# ny_lon, ny_lat = -74.00, 40.71
-# delhi_lon, delhi_lat = 77.23, 28.61
-#
-# plt.plot([ny_lon, delhi_lon], [ny_lat, delhi_lat],
-#          color='blue', linewidth=2, marker='x',
-#          transform=ccrs.Geodetic()
-#          )
-# ax1.plot()
-# ax2.plot()
+ny_lon, ny_lat = -74.00, 40.71
+delhi_lon, delhi_lat = 77.23, 28.61
+
+plt.plot([ny_lon, delhi_lon], [ny_lat, delhi_lat],
+         color='blue', linewidth=2, marker='x',
+         transform=ccrs.Geodetic()
+         )
 
 plt.show()
 
