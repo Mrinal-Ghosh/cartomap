@@ -1,22 +1,21 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import cartomap as cm
 import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 
+cm.plotCartoMap(projection='northpole', terrain=True)
 
-cm.plotCartoMap(projection='north', terrain=True)
-
-ny_lon, ny_lat = -74.00, 40.71
-delhi_lon, delhi_lat = 77.23, 28.61
-
-plt.plot([ny_lon, delhi_lon], [ny_lat, delhi_lat],
-         color='blue', linewidth=2, marker='x',
-         transform=ccrs.Geodetic()
-         )
+# ny_lon, ny_lat = -74.00, 40.71
+# delhi_lon, delhi_lat = 77.23, 28.61
+#
+# plt.plot([ny_lon, delhi_lon], [ny_lat, delhi_lat],
+#          color='blue', linewidth=2, marker='x',
+#          transform=ccrs.Geodetic()
+#          )
+# ax1.plot()
+# ax2.plot()
 
 plt.show()
-
-
 
 ######################### Supported Arguments ##############################
 # latlim, # Latitude limits
@@ -41,5 +40,5 @@ plt.show()
 # PlateCarree as 'plate',
 # LambertConformal as 'lambert'
 # Mollweide as 'mollweide'
-# NorthPolarStereo as 'north'
-# SouthPolarStereo as 'south'
+# NorthPolarStereo as 'northpole'
+# SouthPolarStereo as 'southpole'
