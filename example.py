@@ -3,15 +3,16 @@ import cartomap as cm
 import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 
-cm.plotCartoMap(projection='northpole', terrain=True)
+cm.plotCartoMap(projection='northpole', terrain=True, apex=True, igrf=True, mlon_cs='mlt')
+# cm.plotCartoMap(projection='southpole', terrain=True, apex=True, mlon_cs='mlt')
 
-ny_lon, ny_lat = -74.00, 40.71
-delhi_lon, delhi_lat = 77.23, 28.61
-
-plt.plot([ny_lon, delhi_lon], [ny_lat, delhi_lat],
-         color='blue', linewidth=2, marker='x',
-         transform=ccrs.Geodetic()
-         )
+# ny_lon, ny_lat = -74.00, 40.71
+# delhi_lon, delhi_lat = 77.23, 28.61
+#
+# plt.plot([ny_lon, delhi_lon], [ny_lat, delhi_lat],
+#          color='blue', linewidth=2, marker='x',
+#          transform=ccrs.Geodetic()
+#          )
 
 plt.show()
 

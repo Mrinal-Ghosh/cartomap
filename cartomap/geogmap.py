@@ -97,7 +97,7 @@ def polarLim(ax,projection):
         ax.set_extent([-180, 180, 90, 0], ccrs.PlateCarree())
 
 
-def plotCartoMap(latlim=[0, 75], lonlim=[-40, 40], parallels=[], meridians=[],
+def plotCartoMap(latlim=[-90, 90], lonlim=[-180, 180], parallels=[], meridians=[],
                  pole_center_lon=0,figsize=(12, 8), terrain=False, ax=None,
                  projection='stereo', title='', resolution='110m',
                  states=True, grid_linewidth=0.5, grid_color='black',
@@ -215,14 +215,14 @@ def plotCartoMap(latlim=[0, 75], lonlim=[-40, 40], parallels=[], meridians=[],
             date = datetime(2017, 12, 31, 0, 0, 0)
         assert isinstance(date, datetime)
 
-        A = ap.Apex(date = date)
+        A = ap.Apex(date=date)
         # Define levels and ranges for conversion
         if mlon_cs == 'mlt':
             if mlon_levels is None:
                 mlon_levels = np.arange(0, 24.1, 1)
                 mlon_range = np.arange(mlon_levels[0], 24.1, 0.1)
             elif isinstance(mlon_levels, bool):
-                if mlon_levels == False:
+                if mlon_levels is False:
                     mlon_levels = np.array([])
                     mlon_range = np.arange(0, 24.1, 0.1)
             else:
@@ -231,7 +231,7 @@ def plotCartoMap(latlim=[0, 75], lonlim=[-40, 40], parallels=[], meridians=[],
             if mlon_levels is None:
                 mlon_levels = np.arange(-180, 180, 20)
             elif isinstance(mlon_levels, bool):
-                if mlon_levels == False:
+                if mlon_levels is False:
                     mlon_levels = np.array([])
                     mlon_range = np.arange(-180, 181, 0.1)
             else:
@@ -245,7 +245,7 @@ def plotCartoMap(latlim=[0, 75], lonlim=[-40, 40], parallels=[], meridians=[],
             if mlon_cs == 'mlt':
                 y, x = A.convert(mlat_range, MLON, 'mlt', 'geo', datetime=date)
             else:
-                y, x  = A.convert(mlat_range, MLON, 'apex', 'geo')
+                y, x = A.convert(mlat_range, MLON, 'apex', 'geo')
             # Plot meridian
             inmap = np.logical_and(x >= lonlim[0], x <= lonlim[1])
             if np.sum(inmap) > 10:
@@ -261,11 +261,11 @@ def plotCartoMap(latlim=[0, 75], lonlim=[-40, 40], parallels=[], meridians=[],
                 if np.logical_and(mx >= lonlim[0], mx <= lonlim[1]):
                     if mlon_cs == 'mlt' and mlon != 0:
                         ax.text(mx, my, str(int(mlon)), color=label_colors,
-                                 fontsize=14, backgroundcolor='white',
+                                 fontsize=mgrid_fontsize, backgroundcolor='white',
                                  transform=ccrs.PlateCarree())
                     elif mlon_cs != 'mlt' and mlon != 360:
                         ax.text(mx, my, str(int(mlon)), color=label_colors,
-                                 fontsize=14, backgroundcolor='white',
+                                 fontsize=mgrid_fontsize, backgroundcolor='white',
                                  transform=ccrs.PlateCarree())
         # Do parallels
         for mlat in mlat_levels:
@@ -273,8 +273,8 @@ def plotCartoMap(latlim=[0, 75], lonlim=[-40, 40], parallels=[], meridians=[],
             if mlon_cs == 'mlt':
                 gy, gx = A.convert(MLAT, mlon_range, 'mlt', 'geo', datetime=date)
             else:
-
                 gy, gx = A.convert(MLAT, mlon_range, 'apex', 'geo', datetime=date)
+
             inmap = np.logical_and(gy >= latlim[0], gy <= latlim[1])
             if np.sum(inmap) > 10:
                 ax.plot(np.unwrap(gx, 180), np.unwrap(gy, 90), c=mlat_colors,
@@ -289,7 +289,7 @@ def plotCartoMap(latlim=[0, 75], lonlim=[-40, 40], parallels=[], meridians=[],
                 if np.logical_and(mx >= lonlim[0], mx <= lonlim[1]) and \
                 np.logical_and(my >= latlim[0], my <= latlim[1]):
                     ax.text(mx, my, str(int(mlat)), color=label_colors,
-                             fontsize=14, backgroundcolor='white',
+                             fontsize=mgrid_fontsize, backgroundcolor='white',
                              transform=ccrs.PlateCarree())
 
     if igrf:
