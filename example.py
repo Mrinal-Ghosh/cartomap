@@ -2,9 +2,17 @@
 import cartomap as cm
 import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
+from matplotlib import path as mpath
+import numpy as np
 
-cm.plotCartoMap(projection='northpole', terrain=True, apex=True, igrf=True, mlon_cs='mlt')
-# cm.plotCartoMap(projection='southpole', terrain=True, apex=True, mlon_cs='mlt')
+
+fig = plt.figure()
+ax1 = fig.add_subplot(121, projection=ccrs.NorthPolarStereo())
+cm.plotCartoMap(projection='northpole', terrain=True, apex=True, igrf=True, mlon_cs='mlt', latlim=[0,90], lonlim=[-180,180], ax=ax1, mlat_levels=[0,20,40,60,80], mlat_labels=False)
+
+
+ax2 = fig.add_subplot(122, projection=ccrs.SouthPolarStereo())
+cm.plotCartoMap(projection='southpole', terrain=True, apex=True, igrf=True, mlon_cs='mlt', latlim=[-90, -30], lonlim=[-180, 180], ax=ax2, mlat_levels=[0,-20,-40,-60,-80], mlat_labels=False)
 
 # ny_lon, ny_lat = -74.00, 40.71
 # delhi_lon, delhi_lat = 77.23, 28.61
