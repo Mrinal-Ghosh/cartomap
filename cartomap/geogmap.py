@@ -16,7 +16,11 @@ from cartopy.feature.nightshade import Nightshade
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 import matplotlib.path as mpath
+import matplotlib.dates as mdates
 # from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
+from pandas.plotting import register_matplotlib_converters
+
+register_matplotlib_converters()
 
 theta = np.linspace(0, 2 * np.pi, 100)
 center, radius = [0.5, 0.5], 0.5
@@ -247,6 +251,62 @@ def plotCartoMap(latlim=None, lonlim=None, parallels=None, meridians=None,
     # Set Extent
 
     ax.set_extent([lonlim[0], lonlim[1], latlim[0], latlim[1]], crs=ccrs.PlateCarree())
+
+    if 'fig' in locals():
+        return fig, ax
+    else:
+        return ax
+
+
+def plotKeogram(im=None, t=None, latline=None, lonline=None, parallels=None, meridians=None, mlat_levels=None,
+                mlon_levels=None, ax=False, figsize=None, apex=False, geo=False, height=350):
+
+    # pass entire im and t from .h5 file
+
+    if latline is None:
+        im = np.array(im)[0:, lonline, 0:]
+        y = range(-90, 89)
+    elif lonline is None:
+        im = np.array(im)[0:, 0:, latline]
+        y = range(-180, 179)
+
+    t = list(map(datetime.fromtimestamp, t))
+
+    im = np.flipud(np.transpose(im))
+    mt = mdates.date2num((t[0], t[-1]))
+
+    if not ax:
+        if figsize is None:
+            fig = plt.figure()
+        else:
+            fig = plt.figure(figsize=figsize)
+        ax = fig.gca()
+
+    # fig.suptitle(f'{t[0].strftime("%Y-%m-%d")}')
+    ax.imshow(im, extent=[mt[0], mt[1], y[0], y[-1]], aspect='auto')
+
+    A = ap.Apex(date=t[0])
+
+    if latline is None:
+        if apex is True:
+            for level in mlat_levels:
+                glat, _ = A.convert(level, lonline, 'geo', 'apex', height=height)
+                ax.axhline(glat, linestyle='--', linewidth=1, color='firebrick')
+        if geo is True:
+            for level in parallels:
+                ax.axhline(level, linestyle='--', linewidth=1, color='cornflowerblue')
+    elif lonline is None:
+        if apex is True:
+            for level in mlon_levels:
+                _, glon = A.convert(latline, level, 'geo', 'apex', height=height)
+                ax.axhline(glon, linestyle='--', linewidth=1, color='firebrick')
+        if geo is True:
+            for level in meridians:
+                ax.axhline(level, linestyle='--', linewidth=1, color='cornflowerblue')
+
+    ax.xaxis_date()
+    ax.xaxis.set_major_formatter(mdates.DateFormatter('%H:%M:%S'))
+    # fig.autofmt_xdate()
 
     if 'fig' in locals():
         return fig, ax
