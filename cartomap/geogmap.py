@@ -283,7 +283,7 @@ def plotKeogram(im=None, t=None, latline=None, lonline=None, parallels=None, mer
         ax = fig.gca()
 
     # fig.suptitle(f'{t[0].strftime("%Y-%m-%d")}')
-    ax.imshow(im, extent=[mt[0], mt[1], y[0], y[-1]], aspect='auto')
+    ax.imshow(im, extent=[mt[0], mt[1], y[0], y[-1]], aspect='auto', cmap='gist_ncar')
 
     A = ap.Apex(date=t[0])
 

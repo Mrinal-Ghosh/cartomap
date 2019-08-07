@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="429252f2-5a4e-4996-a4cd-42e377190c99" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example_keogram.py" beforeDir="false" afterPath="$PROJECT_DIR$/example_keogram.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cartomap/geogmap.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="314" selection-start-line="314" selection-end-line="314" />
+            <state relative-caret-position="188">
+              <caret line="140" column="33" selection-start-line="140" selection-start-column="29" selection-end-line="140" selection-end-column="33" />
               <folding>
                 <element signature="e#106#124#0" expanded="true" />
               </folding>
@@ -24,11 +25,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example_keogram.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+            <state relative-caret-position="334">
+              <caret line="29" column="67" lean-forward="true" selection-start-line="29" selection-start-column="67" selection-end-line="29" selection-end-column="67" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -99,16 +100,16 @@
         <option value="$PROJECT_DIR$/tecmov.py" />
         <option value="$PROJECT_DIR$/cartomap/__init__.py" />
         <option value="$PROJECT_DIR$/app.py" />
-        <option value="$PROJECT_DIR$/example_keogram.py" />
         <option value="$PROJECT_DIR$/cartomap/geogmap.py" />
+        <option value="$PROJECT_DIR$/example_keogram.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1928" />
-    <option name="y" value="-280" />
-    <option name="width" value="1936" />
-    <option name="height" value="1096" />
+    <option name="x" value="-2410" />
+    <option name="y" value="-350" />
+    <option name="width" value="2420" />
+    <option name="height" value="1370" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -233,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564685990445</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="example keogram">
+      <created>1565109360688</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1565109360689</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -249,15 +257,15 @@
     <frame x="-1928" y="-280" width="1936" height="1096" extended-state="6" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.120469086" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.15245202" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.24253732" side_tool="true" visible="true" weight="0.2596054" />
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.24307036" side_tool="true" visible="true" weight="0.33333334" />
       <window_info anchor="bottom" id="Version Control" order="1" sideWeight="0.49946696" weight="0.32917964" />
       <window_info anchor="bottom" id="Python Console" order="2" sideWeight="0.7910448" weight="0.3426791" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32931727" />
       <window_info anchor="bottom" id="Run" order="5" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="6" sideWeight="0.7574627" visible="true" weight="0.2596054" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="6" sideWeight="0.75692964" visible="true" weight="0.33333334" />
       <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.49946696" weight="0.3997923" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -275,7 +283,8 @@
     <MESSAGE value="Polar plotting fixed" />
     <MESSAGE value="minor tweaks" />
     <MESSAGE value="Keogram added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Keogram added" />
+    <MESSAGE value="example keogram" />
+    <option name="LAST_COMMIT_MESSAGE" value="example keogram" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/cartopy/mpl/geoaxes.py">
@@ -369,22 +378,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example_keogram.py">
+    <entry file="file://$PROJECT_DIR$/cartomap/geogmap.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+        <state relative-caret-position="188">
+          <caret line="140" column="33" selection-start-line="140" selection-start-column="29" selection-end-line="140" selection-end-column="33" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#106#124#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cartomap/geogmap.py">
+    <entry file="file://$PROJECT_DIR$/example_keogram.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="314" selection-start-line="314" selection-end-line="314" />
+        <state relative-caret-position="334">
+          <caret line="29" column="67" lean-forward="true" selection-start-line="29" selection-start-column="67" selection-end-line="29" selection-end-column="67" />
           <folding>
-            <element signature="e#106#124#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
