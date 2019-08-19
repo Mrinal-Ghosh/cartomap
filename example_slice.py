@@ -17,7 +17,21 @@ if __name__ == '__main__':
         t = f['GPSTEC']['time']
         im = f['GPSTEC']['im']
 
-        fig = plt.figure()
-        ax1 = plt.subplot(211)
-        ax2 = plt.subplot(212)
-        cm.plotSlice()
+        cm.plotSlice(im=im, t=t, time=23, lonline=0, magnetic=True, average=True, conjugate=False)
+
+        """
+        Parameters:
+        im - im from conv*.h5
+        t - t from conv*.h5
+        time - slide number ([0,240] usually)
+        lonline, latline - value in
+        magnetic - true for apex, false/blank for geo
+        ax - axis to be plotted on
+        average - mean of neighbouring two lat/lon
+        skip - # readings to skip
+        conjugate - magnetic conjugate mapped to empty squares
+        figsize - tuple (w,h)
+        height - (currently bugged with inconsistent capped value) - height for apexpy
+        """
+
+        plt.show()

@@ -36,6 +36,7 @@ if __name__ == '__main__':
         skip - # readings to skip
         conjugate - # magnetic conjugate mapped to empty squares
         figsize - tuple (w,h)
+        height - (currently bugged with inconsistent capped value) - height for apexpy
         
         """
 

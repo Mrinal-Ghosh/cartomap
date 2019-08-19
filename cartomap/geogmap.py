@@ -261,7 +261,7 @@ def plotCartoMap(latlim=None, lonlim=None, parallels=None, meridians=None,
 
 def plotKeogram(im=None, t=None, latline=None, lonline=None, line=None, skip=None, average=False, magnetic=False, parallels=None,
                 meridians=None, mlat_levels=None, mlon_levels=None, ax=False, figsize=None,
-                conjugate=True, height=350, imslice=False):
+                conjugate=True, height=350):
 
     # pass entire im and t from .h5 file
     # for mlat or mlon set linetype = 'm'
@@ -387,24 +387,128 @@ def plotKeogram(im=None, t=None, latline=None, lonline=None, line=None, skip=Non
     ax.xaxis.set_major_formatter(mdates.DateFormatter('%H:%M:%S'))
     # fig.autofmt_xdate()
 
-    if not imslice:
-        if 'fig' in locals():
-            return fig, ax
-        else:
-            return ax
+    if 'fig' in locals():
+        return fig, ax
     else:
-        return image
+        return ax
 
 
-def plotSlice(im=None, t=None, latline=None, lonline=None, line=None, skip=None, average=False, magnetic=False,
-              parallels=None, meridians=None, mlat_levels=None, mlon_levels=None, ax=False, figsize=None,
-              conjugate=True, height=350):
+def plotSlice(im=None, t=None, time=None,  latline=None, lonline=None, line=None, skip=None, average=False,
+              magnetic=False, ax=False, figsize=None, conjugate=True, height=350):
 
-    image = plotKeogram(im=im, t=t, latline=latline, lonline=lonline, line=line, skip=skip, average=average,
-                        magnetic=False, parallels=parallels, meridians=meridians, mlat_levels=mlat_levels,
-                        mlon_levels=mlon_levels, ax=False, figsize=None, conjugate=True, height=height, imslice=True)
+    lat = np.arange(-90,90)
+    lon = np.arange(-180,180)
 
-    print(image.shape)
+    def conjugate_img(img):
+        nanind = np.where(np.isnan(img))
+        nanindices = list(zip(nanind[0], nanind[1]))
+        conj = img
+        for nanindex in nanindices:
+            conj[nanindex] = np.flipud(img)[nanindex]
+        return conj
+
+    im = np.array(im)
+    A = ap.Apex(date=t[0])
+
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", category=RuntimeWarning)
+        if magnetic is False:  # geo
+            if latline is None:
+                y = range(-90, 90)
+                lonline += 180
+                if average:
+                    image = np.nanmean(np.array([[im[0:, lonline % 360, 0:]], [im[0:, ((lonline+1) % 360), 0:]],
+                                       [im[0:, ((lonline-1) % 360), 0:]]]), axis=0)
+                    image = np.squeeze(image)  # remove singular dimension
+                else:
+                    image = np.array(im)[0:, lonline % 360, 0:]
+            elif lonline is None:
+                y = range(-180, 180)
+                latline += 90
+                if average:
+                    image = np.nanmean(np.array([[im[0:, 0:, latline % 180]], [im[0:, 0:, (latline+1) % 180]],
+                                       [im[0:, 0:, (latline-1) % 180]]]), axis=0)
+                    image = np.squeeze(image)
+                else:
+                    image = np.array(im)[0:, 0:, latline % 180]
+            image = np.flipud(np.rot90(image))
+
+        else:  # magnetic
+            indexmake = np.vectorize(lambda x: int(round(x)))
+            image = np.array([])
+            mask = np.zeros((im.shape[2], im.shape[1]), dtype=bool)
+
+            if latline is None:  # longitude
+                y = range(-90, 90)
+                lat_ind, lon_ind = np.round(A.convert(range(-90, 90), lonline, 'apex', 'geo'))
+                indices = indexmake(np.array(list(zip(lat_ind + 90, lon_ind + 180))))
+                indices = list(map(tuple, indices))
+
+                for index in indices:
+                    mask[index[0] % 180, index[1] % 360] = True
+                mask = np.rot90(mask)
+
+                if average:
+                    for index in indices:
+                        image = np.append(image, np.nanmean([[im[0:, index[1] % 360, index[0] % 180]],
+                                                            [im[0:, (index[1] + 1) % 360, index[0] % 180]],
+                                                            [im[0:, (index[1] - 1) % 360, index[0] % 180]]], axis=0))
+                else:
+                    for index in indices:
+                        image = np.append(image, im[0:, index[1], index[0]])
+
+                image = np.reshape(image, (len(image) // len(t), len(t)))
+
+                if conjugate:
+                    image = conjugate_img(image)
+
+            elif lonline is None:  # latitude
+                lat_ind, lon_ind = np.round(A.convert(latline, range(-180, 180), 'apex', 'geo'))
+                indices = indexmake(np.array(list(zip(lat_ind + 90, lon_ind + 180))))
+                indices = list(map(tuple, indices))
+                y = range(-180, 180)
+
+                for index in indices:
+                    mask[index[0] % 180, index[1] % 360] = True
+
+                mask = np.rot90(mask)
+
+                if average:
+                    for index in indices:
+                        image = np.append(image, np.nanmean([[im[0:, index[1] % 360, index[0] % 180]],
+                                                             [im[0:, index[1] % 360, (index[0] + 1) % 180]],
+                                                             [im[0:, index[1] % 360, (index[0] - 1) % 180]]], axis=0))
+                else:
+                    for index in indices:
+                        image = np.append(image, im[0:, index[1] % 360, index[0] % len(t)])
+                image = np.reshape(image, (len(image) // len(t), len(t)))
+
+    t = list(map(datetime.fromtimestamp, t))
+    mt = mdates.date2num((t[0], t[-1]))
+
+    if skip is not None:
+        image = image[::skip]
+
+    if not ax:
+        if figsize is None:
+            fig = plt.figure()
+        else:
+            fig = plt.figure(figsize=figsize)
+        ax = fig.gca()
+
+    if time is not None:
+        sl = np.squeeze(image[:, time])
+    else:
+        sl = np.squeeze(image[:, 0])
+        print('No time entered (default 0)')
+    nanmask = np.isfinite(sl)
+
+    if latline is None:
+        plt.plot(lat[nanmask], sl[nanmask])
+        plt.plot(lat[nanmask], sl[nanmask], 'rx')
+    else:
+        plt.plot(lon[nanmask], sl[nanmask])
+        plt.plot(lon[nanmask], sl[nanmask], 'rx')
 
     if 'fig' in locals():
         return fig, ax
