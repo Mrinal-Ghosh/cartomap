@@ -1,7 +1,4 @@
 import numpy as np
-# from shapely import geometry as sgeom
-# from copy import copy
-from datetime import datetime
 import apexpy as ap
 import matplotlib.pyplot as plt
 import cartomap as cm

@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="429252f2-5a4e-4996-a4cd-42e377190c99" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/example_slice.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartomap/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cartomap/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cartomap/geogmap.py" beforeDir="false" afterPath="$PROJECT_DIR$/cartomap/geogmap.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example_keogram.py" beforeDir="false" afterPath="$PROJECT_DIR$/example_keogram.py" afterDir="false" />
     </list>
@@ -14,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cartomap/geogmap.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="299" column="63" selection-start-line="299" selection-start-column="63" selection-end-line="299" selection-end-column="63" />
+            <state relative-caret-position="216">
+              <caret line="406" column="21" selection-start-line="406" selection-start-column="21" selection-end-line="406" selection-end-column="21" />
               <folding>
                 <element signature="e#106#124#0" expanded="true" />
               </folding>
@@ -29,10 +31,34 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example_keogram.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="220">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example_slice.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cartomap/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+              <folding>
+                <element signature="e#0#47#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,17 +126,18 @@
         <option value="$PROJECT_DIR$/cartomap/tecmov.py" />
         <option value="$PROJECT_DIR$/tecmov-cm.py" />
         <option value="$PROJECT_DIR$/tecmov.py" />
-        <option value="$PROJECT_DIR$/cartomap/__init__.py" />
         <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/example_keogram.py" />
         <option value="$PROJECT_DIR$/cartomap/geogmap.py" />
+        <option value="$PROJECT_DIR$/example_slice.py" />
+        <option value="$PROJECT_DIR$/cartomap/__init__.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="width" value="1098" />
-    <option name="height" value="624" />
+    <option name="x" value="-10" />
+    <option name="width" value="1099" />
+    <option name="height" value="625" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -249,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565196071465</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="cmap fixed">
+      <created>1566063327035</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1566063327035</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -266,7 +300,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.2077748" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.21045576" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.211126" side_tool="true" weight="0.44176707" />
       <window_info anchor="bottom" id="Version Control" order="1" sideWeight="0.49946696" weight="0.32917964" />
@@ -274,7 +308,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32931727" />
       <window_info anchor="bottom" id="Run" order="5" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="6" sideWeight="0.7553619" visible="true" weight="0.33333334" />
+      <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.7553619" visible="true" weight="0.33333334" />
       <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.49946696" weight="0.3997923" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -362,15 +396,6 @@
     <entry file="file://$PROJECT_DIR$/tecmov.py" />
     <entry file="file://$PROJECT_DIR$/test.py" />
     <entry file="file://$PROJECT_DIR$/tecmov-cm.py" />
-    <entry file="file://$PROJECT_DIR$/cartomap/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/h5py/_hl/selections.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -397,8 +422,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/example_keogram.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="220">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -407,10 +432,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cartomap/geogmap.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="299" column="63" selection-start-line="299" selection-start-column="63" selection-end-line="299" selection-end-column="63" />
+        <state relative-caret-position="216">
+          <caret line="406" column="21" selection-start-line="406" selection-start-column="21" selection-end-line="406" selection-end-column="21" />
           <folding>
             <element signature="e#106#124#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example_slice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cartomap/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
           </folding>
         </state>
       </provider>

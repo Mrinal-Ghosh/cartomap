@@ -261,7 +261,7 @@ def plotCartoMap(latlim=None, lonlim=None, parallels=None, meridians=None,
 
 def plotKeogram(im=None, t=None, latline=None, lonline=None, line=None, skip=None, average=False, magnetic=False, parallels=None,
                 meridians=None, mlat_levels=None, mlon_levels=None, ax=False, figsize=None,
-                conjugate=True, height=350):
+                conjugate=True, height=350, imslice=False):
 
     # pass entire im and t from .h5 file
     # for mlat or mlon set linetype = 'm'
@@ -386,6 +386,25 @@ def plotKeogram(im=None, t=None, latline=None, lonline=None, line=None, skip=Non
     ax.xaxis_date()
     ax.xaxis.set_major_formatter(mdates.DateFormatter('%H:%M:%S'))
     # fig.autofmt_xdate()
+
+    if not imslice:
+        if 'fig' in locals():
+            return fig, ax
+        else:
+            return ax
+    else:
+        return image
+
+
+def plotSlice(im=None, t=None, latline=None, lonline=None, line=None, skip=None, average=False, magnetic=False,
+              parallels=None, meridians=None, mlat_levels=None, mlon_levels=None, ax=False, figsize=None,
+              conjugate=True, height=350):
+
+    image = plotKeogram(im=im, t=t, latline=latline, lonline=lonline, line=line, skip=skip, average=average,
+                        magnetic=False, parallels=parallels, meridians=meridians, mlat_levels=mlat_levels,
+                        mlon_levels=mlon_levels, ax=False, figsize=None, conjugate=True, height=height, imslice=True)
+
+    print(image.shape)
 
     if 'fig' in locals():
         return fig, ax
