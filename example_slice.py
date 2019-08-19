@@ -17,8 +17,7 @@ if __name__ == '__main__':
         t = f['GPSTEC']['time']
         im = f['GPSTEC']['im']
 
-        cm.plotSlice(im=im, t=t, time=23, lonline=0, magnetic=True, average=True, conjugate=False)
-
+        cm.plotSlice(im=im, t=t, time=0, latline=0, magnetic=True, average=True, conjugate=False)
         """
         Parameters:
         im - im from conv*.h5

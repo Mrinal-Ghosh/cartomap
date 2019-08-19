@@ -484,7 +484,6 @@ def plotSlice(im=None, t=None, time=None,  latline=None, lonline=None, line=None
                 image = np.reshape(image, (len(image) // len(t), len(t)))
 
     t = list(map(datetime.fromtimestamp, t))
-    mt = mdates.date2num((t[0], t[-1]))
 
     if skip is not None:
         image = image[::skip]
@@ -506,9 +505,12 @@ def plotSlice(im=None, t=None, time=None,  latline=None, lonline=None, line=None
     if latline is None:
         plt.plot(lat[nanmask], sl[nanmask])
         plt.plot(lat[nanmask], sl[nanmask], 'rx')
+        plt.xlabel('Latitude')
     else:
         plt.plot(lon[nanmask], sl[nanmask])
         plt.plot(lon[nanmask], sl[nanmask], 'rx')
+        plt.xlabel('Longitude')
+    plt.ylabel('TECu')
 
     if 'fig' in locals():
         return fig, ax
