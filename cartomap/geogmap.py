@@ -506,16 +506,16 @@ def plotSlice(im=None, t=None, time=None,  latline=None, lonline=None, line=None
     nanmask = np.isfinite(sl)
 
     if latline is None:
-        plt.plot(lat[nanmask], sl[nanmask])
-        plt.plot(lat[nanmask], sl[nanmask], 'rx')
+        x_ax = lat[nanmask]
         plt.xlabel('Latitude')
     else:
-        plt.plot(lon[nanmask], sl[nanmask])
-        plt.plot(lon[nanmask], sl[nanmask], 'rx')
+        x_ax = lon[nanmask]
         plt.xlabel('Longitude')
+    plt.plot(x_ax, sl[nanmask])
+    plt.plot(x_ax, sl[nanmask], 'rx')
     plt.ylabel('TECu')
 
     if 'fig' in locals():
-        return fig, ax
+        return fig, ax, x_ax, sl[nanmask]
     else:
-        return ax
+        return ax, x_ax, sl[nanmask]
