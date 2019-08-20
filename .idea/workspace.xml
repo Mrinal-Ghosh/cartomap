@@ -4,7 +4,7 @@
     <list default="true" id="429252f2-5a4e-4996-a4cd-42e377190c99" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cartomap/geogmap.py" beforeDir="false" afterPath="$PROJECT_DIR$/cartomap/geogmap.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_slice.py" beforeDir="false" afterPath="$PROJECT_DIR$/example_slice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example_keogram.py" beforeDir="false" afterPath="$PROJECT_DIR$/example_keogram.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example_keogram.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="38" selection-end-column="86" />
+            <state relative-caret-position="190">
+              <caret line="43" column="86" selection-start-line="43" selection-start-column="86" selection-end-line="43" selection-end-column="86" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -29,21 +29,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example_slice.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="19" column="97" selection-start-line="19" selection-start-column="97" selection-end-line="19" selection-end-column="97" />
+            <state relative-caret-position="340">
+              <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <marker date="1566236423843" expanded="true" signature="521:522" ph="..." />
+                <marker date="1566236554863" expanded="true" signature="521:522" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cartomap/geogmap.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="512" column="20" selection-start-line="512" selection-start-column="20" selection-end-line="512" selection-end-column="20" />
+            <state relative-caret-position="6800">
+              <caret line="355" column="27" selection-start-line="355" selection-start-column="27" selection-end-line="355" selection-end-column="27" />
               <folding>
                 <element signature="e#106#124#0" expanded="true" />
               </folding>
@@ -103,16 +103,17 @@
         <option value="$PROJECT_DIR$/tecmov.py" />
         <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/cartomap/__init__.py" />
-        <option value="$PROJECT_DIR$/example_keogram.py" />
         <option value="$PROJECT_DIR$/example_slice.py" />
         <option value="$PROJECT_DIR$/cartomap/geogmap.py" />
+        <option value="$PROJECT_DIR$/example_keogram.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
-    <option name="width" value="1099" />
-    <option name="height" value="625" />
+    <option name="y" value="-10" />
+    <option name="width" value="1940" />
+    <option name="height" value="1100" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -272,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566230979785</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Axis Labeling">
+      <created>1566236590041</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1566236590041</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView">
@@ -339,7 +347,8 @@
     <MESSAGE value="example keogram" />
     <MESSAGE value="cmap fixed" />
     <MESSAGE value="plotSlice" />
-    <option name="LAST_COMMIT_MESSAGE" value="plotSlice" />
+    <MESSAGE value="Axis Labeling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Axis Labeling" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/cartopy/mpl/geoaxes.py">
@@ -441,31 +450,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example_slice.py">
+    <entry file="file://$PROJECT_DIR$/example_keogram.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="19" column="97" selection-start-line="19" selection-start-column="97" selection-end-line="19" selection-end-column="97" />
+        <state relative-caret-position="190">
+          <caret line="43" column="86" selection-start-line="43" selection-start-column="86" selection-end-line="43" selection-end-column="86" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <marker date="1566236423843" expanded="true" signature="521:522" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example_keogram.py">
+    <entry file="file://$PROJECT_DIR$/example_slice.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="38" selection-end-column="86" />
+        <state relative-caret-position="340">
+          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+            <marker date="1566236554863" expanded="true" signature="521:522" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cartomap/geogmap.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="512" column="20" selection-start-line="512" selection-start-column="20" selection-end-line="512" selection-end-column="20" />
+        <state relative-caret-position="6800">
+          <caret line="355" column="27" selection-start-line="355" selection-start-column="27" selection-end-line="355" selection-end-column="27" />
           <folding>
             <element signature="e#106#124#0" expanded="true" />
           </folding>

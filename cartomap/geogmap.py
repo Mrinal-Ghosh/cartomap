@@ -306,6 +306,7 @@ def plotKeogram(im=None, t=None, latline=None, lonline=None, line=None, skip=Non
             mask = np.zeros((im.shape[2], im.shape[1]), dtype=bool)
 
             if latline is None:  # longitude
+                lonline += 90
                 y = range(-90, 90)
                 lat_ind, lon_ind = np.round(A.convert(range(-90, 90), lonline, 'apex', 'geo'))
                 indices = indexmake(np.array(list(zip(lat_ind + 90, lon_ind + 180))))
@@ -352,6 +353,8 @@ def plotKeogram(im=None, t=None, latline=None, lonline=None, line=None, skip=Non
 
     t = list(map(datetime.fromtimestamp, t))
     mt = mdates.date2num((t[0], t[-1]))
+
+    image = np.flipud(image)
 
     if skip is not None:
         image = image[::skip]
